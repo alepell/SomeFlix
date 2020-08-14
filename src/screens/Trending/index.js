@@ -20,7 +20,6 @@ const Trending = () => {
     <SafeAreaView>
       <Container>
         <TrendingText>Trend of the week</TrendingText>
-        <Text style={{color: '#fff'}}>dica: Arraste com o dedo</Text>
         <Carousel
           data={trendingMovies}
           sliderWidth={450}
@@ -36,6 +35,7 @@ const Trending = () => {
               <MovieText>{item.title}</MovieText>
             </View>
           )}
+          keyExtractor={(item) => item.id.toString()}
         />
       </Container>
     </SafeAreaView>

@@ -15,13 +15,15 @@ const Search = () => {
   const [searchString, setSearchString] = useState('John Wick');
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=1d96f0084e2f6fdd39cc6ad08d1c17c9&language=en-US`,
-      )
-      .then((res) => {
-        setData(res.data.results);
-      });
+    if (searchString) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=1d96f0084e2f6fdd39cc6ad08d1c17c9&language=en-US`,
+        )
+        .then((res) => {
+          setData(res.data.results);
+        });
+    }
   }, [searchString]);
 
   return (

@@ -26,6 +26,10 @@ const App = () => {
           },
         })}
         tabBarOptions={{
+          style: {
+            backgroundColor: '#161616',
+            borderTopColor: 'rgba(255,255,255,0.3)',
+          },
           activeTintColor: 'tomato',
           inactiveTintColor: 'gray',
         }}>
